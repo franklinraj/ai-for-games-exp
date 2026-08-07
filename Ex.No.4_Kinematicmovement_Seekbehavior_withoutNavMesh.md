@@ -1,6 +1,6 @@
 # Ex.No: 4  Implementation of Kinematic movement -seek and Flee behavior in Unity
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE: 29/07/2026                                                                            
+### REGISTER NUMBER : 212223230058
 ### AIM: 
 To write a program to simulate the process of seek and Flee behavior in Unity without NavigationMeshAgent. 
 ### Algorithm:
@@ -31,23 +31,16 @@ using UnityEngine;
 
 public class seekScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Transform target;  // The object to seek
-    public float speed = 5f;  // Movement speed
-    void Start()
-    {
-        
-    }
+    public Transform target;
+    public float speed = 5f;
 
-    // Update is called once per frame
     void Update()
     {
-        if (target == null) return;  // Exit if no target is assigned
+        if (target == null)
+            return;
 
-        // Calculate the desired direction
         Vector3 direction = (target.position - transform.position).normalized;
 
-        // Move the object towards the target
         transform.position += direction * speed * Time.deltaTime;
     }
 }
@@ -59,28 +52,23 @@ using UnityEngine;
 
 public class fleeScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Transform target;  // The object to seek
-    public float speed = 5f;  // Movement speed
-    void Start()
-    {
-        
-    }
+    public Transform target;
+    public float speed = 5f;
 
-    // Update is called once per frame
     void Update()
     {
-        if (target == null) return;  // Exit if no target is assigned
+        if (target == null)
+            return;
 
-        // Calculate the desired direction
-        Vector3 direction = (transform.position-target.position).normalized;
+        Vector3 direction = (transform.position - target.position).normalized;
 
-        // Move the object towards the target
         transform.position += direction * speed * Time.deltaTime;
     }
 }
 ```
 ### Output:
+<img width="1916" height="976" alt="Screenshot 2026-08-07 143519" src="https://github.com/user-attachments/assets/67d3493b-273e-42b3-b80a-7928bc9b74af" />
+<img width="1826" height="971" alt="Screenshot 2026-08-07 143537" src="https://github.com/user-attachments/assets/81db498e-1f7d-47c3-a618-a59c496d8009" />
 
 
 
